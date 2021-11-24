@@ -3,8 +3,17 @@
 ## Lokalna customization na rzecz projektu dwh na maszynach zim
 Przejscie z cepha/rooka na longhorn
 
+### Build Status
+* Engine: [![Build Status](https://drone-publish.longhorn.io/api/badges/longhorn/longhorn-engine/status.svg)](https://drone-publish.longhorn.io/longhorn/longhorn-engine)[![Go Report Card](https://goreportcard.com/badge/github.com/longhorn/longhorn-engine)](https://goreportcard.com/report/github.com/longhorn/longhorn-engine)[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-engine.svg?type=shield)](https://app.fossa.com/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-engine?ref=badge_shield)
+* Manager: [![Build Status](https://drone-publish.longhorn.io/api/badges/longhorn/longhorn-manager/status.svg)](https://drone-publish.longhorn.io/longhorn/longhorn-manager)[![Go Report Card](https://goreportcard.com/badge/github.com/longhorn/longhorn-manager)](https://goreportcard.com/report/github.com/longhorn/longhorn-manager)[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-manager.svg?type=shield)](https://app.fossa.com/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-manager?ref=badge_shield)
+* Instance Manager: [![Build Status](http://drone-publish.longhorn.io/api/badges/longhorn/longhorn-instance-manager/status.svg)](http://drone-publish.longhorn.io/longhorn/longhorn-instance-manager)[![Go Report Card](https://goreportcard.com/badge/github.com/longhorn/longhorn-instance-manager)](https://goreportcard.com/report/github.com/longhorn/longhorn-instance-manager)[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-instance-manager.svg?type=shield)](https://app.fossa.com/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-instance-manager?ref=badge_shield)
+* Share Manager: [![Build Status](http://drone-publish.longhorn.io/api/badges/longhorn/longhorn-share-manager/status.svg)](http://drone-publish.longhorn.io/longhorn/longhorn-share-manager)[![Go Report Card](https://goreportcard.com/badge/github.com/longhorn/longhorn-share-manager)](https://goreportcard.com/report/github.com/longhorn/longhorn-share-manager)[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-share-manager.svg?type=shield)](https://app.fossa.com/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-share-manager?ref=badge_shield)
+* Backing Image Manager: [![Build Status](http://drone-publish.longhorn.io/api/badges/longhorn/backing-image-manager/status.svg)](http://drone-publish.longhorn.io/longhorn/backing-image-manager)[![Go Report Card](https://goreportcard.com/badge/github.com/longhorn/backing-image-manager)](https://goreportcard.com/report/github.com/longhorn/backing-image-manager)[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Fbacking-image-manager.svg?type=shield)](https://app.fossa.com/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Fbacking-image-manager?ref=badge_shield)
+* UI: [![Build Status](https://drone-publish.longhorn.io/api/badges/longhorn/longhorn-ui/status.svg)](https://drone-publish.longhorn.io/longhorn/longhorn-ui)[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-ui.svg?type=shield)](https://app.fossa.com/projects/custom%2B25850%2Fgithub.com%2Flonghorn%2Flonghorn-ui?ref=badge_shield)
+* Test: [![Build Status](http://drone-publish.longhorn.io/api/badges/longhorn/longhorn-tests/status.svg)](http://drone-publish.longhorn.io/longhorn/longhorn-tests)
+
 ### Overview
-Longhorn is a distributed block storage system for Kubernetes. Longhorn is cloud native storage because it is built using Kubernetes and container primatives. 
+Longhorn is a distributed block storage system for Kubernetes. Longhorn is cloud native storage because it is built using Kubernetes and container primitives. 
 
 Longhorn is lightweight, reliable, and powerful. You can install Longhorn on an existing Kubernetes cluster with one `kubectl apply` command or using Helm charts. Once Longhorn is installed, it adds persistent volume support to the Kubernetes cluster.
 
@@ -22,43 +31,50 @@ You can read more technical details of Longhorn [here](https://longhorn.io/).
 
 ## Get Involved
 **Community Meeting and Office Hours**!: Hosted by the core maintainers of Longhorn: 2nd Friday of the every month at 09:00 Pacific Time (PT)/12:00 Eastern Time (ET) on Zoom: http://bit.ly/longhorn-community-meeting. Gcal event: http://bit.ly/longhorn-events
+
 **Longhorn Mailing List**!: Stay up to date on the latest news and events: https://lists.cncf.io/g/cncf-longhorn
 
 You can read more about the community and its events here: https://github.com/longhorn/community
 
 ## Current status
 
-The latest release of Longhorn is **v1.1.0**.
+The latest release of Longhorn is [![Releases](https://img.shields.io/github/release/longhorn/longhorn/all.svg)](https://github.com/longhorn/longhorn/releases)
 
 ## Source code
 Longhorn is 100% open source software. Project source code is spread across a number of repos:
 
-1. Longhorn engine -- Core controller/replica logic https://github.com/longhorn/longhorn-engine
-1. Longhorn manager -- Longhorn orchestration https://github.com/longhorn/longhorn-manager
-1. Longhorn UI -- Dashboard https://github.com/longhorn/longhorn-ui
+| Component                      | What it does                                                           | GitHub repo                                                                                 |
+| :----------------------------- | :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| Longhorn Backing Image Manager | Backing image download, sync, and deletion in a disk                   | [longhorn/backing-image-manager](https://github.com/longhorn/backing-image-manager)         |
+| Longhorn Engine                | Core controller/replica logic                                          | [longhorn/longhorn-engine](https://github.com/longhorn/longhorn-engine)                     |
+| Longhorn Instance Manager      | Controller/replica instance lifecycle management                       | [longhorn/longhorn-instance-manager](https://github.com/longhorn/longhorn-instance-manager) |
+| Longhorn Manager               | Longhorn orchestration, includes CSI driver for Kubernetes             | [longhorn/longhorn-manager](https://github.com/longhorn/longhorn-manager)                   |
+| Longhorn Share Manager         | NFS provisioner that exposes Longhorn volumes as ReadWriteMany volumes | [longhorn/longhorn-share-manager](https://github.com/longhorn/longhorn-share-manager)       |
+| Longhorn UI                    | The Longhorn dashboard                                                 | [longhorn/longhorn-ui](https://github.com/longhorn/longhorn-ui)                             |
 
 ![Longhorn UI](./longhorn-ui.png)
 
 # Requirements
 
-For the installation requirements, refer to the [Longhorn documentation.](https://longhorn.io/docs/install/requirements)
+For the installation requirements, refer to the [Longhorn documentation.](https://longhorn.io/docs/latest/deploy/install/#installation-requirements)
 
 # Install
 
 Longhorn can be installed on a Kubernetes cluster in several ways:
 
-- [kubectl](https://longhorn.io/docs/install/install-with-kubectl/)
-- [Helm](https://longhorn.io/docs/install/install-with-helm/)
-- [Rancher catalog app](https://longhorn.io/docs/install/install-with-rancher/)
+- [Rancher catalog app](https://longhorn.io/docs/latest/deploy/install/install-with-rancher/)
+- [kubectl](https://longhorn.io/docs/latest/deploy/install/install-with-kubectl/)
+- [Helm](https://longhorn.io/docs/latest/deploy/install/install-with-helm/)
 
 # Documentation
 
 The official Longhorn documentation is [here.](https://longhorn.io/docs)
 
 ## Community
+
 Longhorn is open source software, so contributions are greatly welcome. Please read [Code of Conduct](./CODE_OF_CONDUCT.md) and [Contributing Guideline](./CONTRIBUTING.md) before contributing.
 
-Contributing code is not the only way of contributing. We value feedbacks very much and many of the Longhorn features are originated from users' feedback. If you have any feedbacks, feel free to [file an issue](https://github.com/longhorn/longhorn/issues/new?title=*Summarize%20your%20issue%20here*&body=*Describe%20your%20issue%20here*%0A%0A---%0AVersion%3A%20``) and talk to the developers at the [CNCF](https://slack.cncf.io/) [#longhorn](https://cloud-native.slack.com/messages/longhorn) slack channel.
+Contributing code is not the only way of contributing. We value feedbacks very much and many of the Longhorn features are originated from users' feedback. If you have any feedbacks, feel free to [file an issue](https://github.com/longhorn/longhorn/issues/new/choose) and talk to the developers at the [CNCF](https://slack.cncf.io/) [#longhorn](https://cloud-native.slack.com/messages/longhorn) slack channel.
 
 ## License
 
